@@ -3,7 +3,7 @@ var seeder = require('mongoose-seed');
 var db = require('./config/db');
 // Connect to MongoDB via Mongoose 
 module.exports = function(){
-    seeder.connect(db.url, function() {
+    seeder.connect(process.env.MONGODB_URI, function() {
 
     // Load Mongoose models 
     seeder.loadModels([

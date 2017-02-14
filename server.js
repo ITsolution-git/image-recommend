@@ -11,7 +11,7 @@ var methodOverride = require('method-override');
 var db = require('./config/db');
 
 var port = process.env.PORT || 8080; // set our port
-mongoose.connect(process.env.MONGODB_URI, function(a){
+mongoose.connect(db.url, function(a){
 	console.log(a);
 	var Image = require('./app/models/Image');
 	Image.count({}, function(err, result){

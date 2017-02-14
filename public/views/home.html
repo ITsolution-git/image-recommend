@@ -9,8 +9,8 @@
 			<h3 class="pull-left">{{img.status}}</h3>
 			<h3 class="pull-right">{{img.amount}}</h3>
 		</div>
-		<img ng-src="{{'
-		/images/' + img.name}}" class="img-rounded" alt="Cinque Terre">
+		<img lazy-img="{{'
+		/images/' + img.name}}"	class="img-rounded" alt="Cinque Terre">
 		<div class="row-fluid">
 			<button ng-if="img.status!='archived'" class="btn btn-sm btn-primary pull-left" ng-click="deleteImg(img._id)">Delete</button>
 			<h5 class="pull-right">{{img.subFolder}}</h5>

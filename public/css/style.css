@@ -1,1 +1,9 @@
 body { padding-top:30px; }
+
+.item {
+	margin-bottom: 15px;
+}
+.item img{
+	max-width: 100%;
+	margin-bottom: 10px;
+}

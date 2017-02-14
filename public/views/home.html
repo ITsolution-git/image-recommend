@@ -1,5 +1,20 @@
-<div class="jumbotron text-center">
-	<h1>Home Page 4 Life</h1>
+<div class="jumbotron text-center row">
+	<h1>Images</h1>
+	<div class="checkbox">
+		<label><input type="checkbox" ng-click="showArchiveClicked()">Show Archived</label>
+	</div>
+	<div ng-repeat = "img in filterImg(images) | orderBy:'name'" class="col-xs-6 col-md-3 item">
 
-	<p>{{ tagline }}</p>
+		<div class="row-fluid">
+			<h3 class="pull-left">{{img.status}}</h3>
+			<h3 class="pull-right">{{img.amount}}</h3>
+		</div>
+		<img ng-src="{{'
+		/images/' + img.name}}" class="img-rounded" alt="Cinque Terre">
+		<div class="row-fluid">
+			<button ng-if="img.status!='archived'" class="btn btn-sm btn-primary pull-left" ng-click="deleteImg(img._id)">Delete</button>
+			<h5 class="pull-right">{{img.subFolder}}</h5>
+		</div>
+	</div>
+	
 </div>
